@@ -3,9 +3,15 @@ package ar.edu.unlp.oo1.ejercicio1.impl;
 import ar.edu.unlp.oo1.ejercicio1.WallPost;
 
 public class WallPostImpl implements WallPost {
-	private String text = "Undefined post";
-	private int likes = 0;
-	private boolean featured = false;
+	private String text;
+	private int likes;
+	private boolean featured;
+
+	public WallPostImpl() {
+		this.text = "Undefined post";
+		this.likes = 0;
+		this.featured = false;
+	}
 
 	/* Retorna el texto descriptivo de la publicación */
 	public String getText() {
