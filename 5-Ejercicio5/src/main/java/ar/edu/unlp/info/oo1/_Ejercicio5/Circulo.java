@@ -8,12 +8,12 @@ public class Circulo implements Figura {
 	}
 
 	public double getDiametro() {
-		this.diametro = radio * 2;
 		return this.diametro;
 	}
 
 	public void setDiametro(double diametro) {
 		this.diametro = diametro;
+		this.radio = diametro / 2;
 	}
 
 	public double getRadio() {
@@ -22,6 +22,7 @@ public class Circulo implements Figura {
 
 	public void setRadio(double radio) {
 		this.radio = radio;
+		this.diametro = radio * 2;
 	}
 
 	public double getPerimetro() {
