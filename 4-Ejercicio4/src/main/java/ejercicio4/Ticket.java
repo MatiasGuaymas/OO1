@@ -1,15 +1,18 @@
 package ejercicio4;
 
 import java.time.LocalDate;
-import java.util.List;
 
 public class Ticket {
 	private LocalDate fecha;
-	private List<Producto> lista;
+	private int cantidadDeProductos;
+	private double pesoTotal;
+	private double precioTotal;
 
-	public Ticket(List<Producto> lista) {
+	public Ticket(int cantidad, double peso, double precio) {
 		this.fecha = LocalDate.now();
-		this.lista = lista;
+		this.cantidadDeProductos = cantidad;
+		this.pesoTotal = peso;
+		this.precioTotal = precio;
 	}
 
 	public double impuesto() {
@@ -18,25 +21,21 @@ public class Ticket {
 
 	public String toString() {
 		String ticket = "Fecha emitida: " + this.fecha.toString() + "\n" + "Cantidad de productos comprados: "
-				+ this.getCantidadDeProductos() + "\n" + "Peso total en productos: " + this.getPesoTotal() + "\n"
-				+ "Total a pagar: " + this.getPrecioTotal();
+				+ this.cantidadDeProductos + "\n" + "Peso total en productos: " + this.pesoTotal + "\n"
+				+ "Total a pagar: " + this.precioTotal;
 		return ticket;
 	}
 
+	public int getCantidadDeProductos() {
+		return cantidadDeProductos;
+	}
+
 	public double getPesoTotal() {
-		return this.lista.stream().mapToDouble(Producto::getPeso).sum();
+		return pesoTotal;
 	}
 
 	public double getPrecioTotal() {
-		return this.lista.stream().mapToDouble(Producto::getPrecio).sum();
-	}
-
-	public int getCantidadDeProductos() {
-		return this.lista.size();
-	}
-
-	public List<Producto> getProductos() {
-		return this.lista;
+		return precioTotal;
 	}
 
 	public LocalDate getFecha() {

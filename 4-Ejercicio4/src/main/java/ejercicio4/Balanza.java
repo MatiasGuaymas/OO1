@@ -1,13 +1,17 @@
 package ejercicio4;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Balanza {
-	private List<Producto> lista = new LinkedList<Producto>();
+	private List<Producto> lista;
+
+	public Balanza() {
+		this.ponerEnCero();
+	}
 
 	public void ponerEnCero() {
-		this.lista.clear();
+		this.lista = new ArrayList<Producto>();
 	}
 
 	public void agregarProducto(Producto p) {
@@ -15,7 +19,8 @@ public class Balanza {
 	}
 
 	public Ticket emitirTicket() {
-		Ticket tick = new Ticket(new LinkedList<Producto>(this.lista));
+		Ticket tick = new Ticket(this.getCantidadDeProductos(), this.getPesoTotal(), this.getPrecioTotal());
+		this.ponerEnCero();
 		return tick;
 	}
 

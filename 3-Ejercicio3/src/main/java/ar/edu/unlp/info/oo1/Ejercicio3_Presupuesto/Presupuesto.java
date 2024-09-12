@@ -1,7 +1,7 @@
 package ar.edu.unlp.info.oo1.Ejercicio3_Presupuesto;
 
 import java.time.LocalDate;
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Presupuesto {
@@ -12,7 +12,7 @@ public class Presupuesto {
 	public Presupuesto(String cliente) {
 		this.cliente = cliente;
 		this.fecha = LocalDate.now();
-		this.items = new LinkedList<Item>();
+		this.items = new ArrayList<Item>();
 	}
 
 	public void agregarItem(Item item) {

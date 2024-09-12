@@ -2,17 +2,15 @@ package ar.edu.unlp.info.oo1._Ejercicio5;
 
 public class Circulo implements Figura {
 	private double radio;
-	private double diametro;
 
 	public Circulo() {
 	}
 
 	public double getDiametro() {
-		return this.diametro;
+		return this.radio * 2;
 	}
 
 	public void setDiametro(double diametro) {
-		this.diametro = diametro;
 		this.radio = diametro / 2;
 	}
 
@@ -22,11 +20,10 @@ public class Circulo implements Figura {
 
 	public void setRadio(double radio) {
 		this.radio = radio;
-		this.diametro = radio * 2;
 	}
 
 	public double getPerimetro() {
-		return Math.PI * this.diametro;
+		return Math.PI * this.getDiametro();
 	}
 
 	public double getArea() {
