@@ -29,9 +29,6 @@ public class Farola {
 		if (!this.farolas.contains(otraFarola)) { // Evito farolas repetidas
 			this.agregarFarola(otraFarola);
 			otraFarola.agregarFarola(this);
-			// otraFarola.farolas.add(this);
-			// otraFarola.getNeighbors().add(this); -> Queda descargada, porque en el
-			// getLista le paso la copia, no la original.
 		}
 	}
 

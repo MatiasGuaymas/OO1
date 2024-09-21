@@ -72,14 +72,10 @@ public class Mamifero {
 		return (this.padre != null) ? this.padre.getMadre() : null;
 	}
 
-	// Si no tengo padre ni madre, no tengo ancestros (Solo sirve para el caso
-	// base).
-	// Aprovecho que pregunto por != null del padre y madre para llamar al metodo
-	// con mis padres.
 	public Boolean tieneComoAncestroA(Mamifero unMamifero) {
-		return (this.padre == null && this.madre == null) ? false
-				: (this.padre != null && (this.padre.equals(unMamifero) || this.padre.tieneComoAncestroA(unMamifero)))
-						|| (this.madre != null && (this.madre.equals(unMamifero) || this.madre.tieneComoAncestroA(unMamifero)));
+		return ((this.padre == unMamifero) || (this.madre == unMamifero)
+				|| (this.padre != null && this.padre.tieneComoAncestroA(unMamifero)
+						|| (this.madre != null && this.madre.tieneComoAncestroA(unMamifero)))) ? true : false;
 	}
 
 }
