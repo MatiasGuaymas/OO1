@@ -27,26 +27,26 @@ public class JobSchedulerTest {
 	}
 
 	private JobScheduler newFifoScheduler() {
-		JobSchedulerFIFO fifoScheduler = new JobSchedulerFIFO();
-		fifoScheduler.setStrategy("FIFO");
+		JobScheduler fifoScheduler = new JobScheduler();
+		fifoScheduler.setStrategy(new FIFO());
 		return fifoScheduler;
 	}
 
 	private JobScheduler newLifoScheduler() {
-		JobSchedulerLIFO lifoScheduler = new JobSchedulerLIFO();
-		lifoScheduler.setStrategy("LIFO");
+		JobScheduler lifoScheduler = new JobScheduler();
+		lifoScheduler.setStrategy(new LIFO());
 		return lifoScheduler;
 	}
 
 	private JobScheduler newPriorityScheduler() {
-		JobSchedulerHighestPriority priorityScheduler = new JobSchedulerHighestPriority();
-		priorityScheduler.setStrategy("HighestPriority");
+		JobScheduler priorityScheduler = new JobScheduler();
+		priorityScheduler.setStrategy(new HighestPriority());
 		return priorityScheduler;
 	}
 
 	private JobScheduler newEffortScheduler() {
-		JobSchedulerMostEffort effortScheduler = new JobSchedulerMostEffort();
-		effortScheduler.setStrategy("MostEffort");
+		JobScheduler effortScheduler = new JobScheduler();
+		effortScheduler.setStrategy(new MostEffort());
 		return effortScheduler;
 	}
 
@@ -59,14 +59,14 @@ public class JobSchedulerTest {
 
 	@Test
 	void testSchedule() {
-		JobScheduler aScheduler = new JobSchedulerHighestPriority();
+		JobScheduler aScheduler = new JobScheduler();
 		aScheduler.schedule(highestPriorityJob);
 		assertTrue(aScheduler.getJobs().contains(highestPriorityJob));
 	}
 
 	@Test
 	void testUnschedule() {
-		JobScheduler aScheduler = new JobSchedulerHighestPriority();
+		JobScheduler aScheduler = new JobScheduler();
 		this.scheduleJobsIn(aScheduler);
 		aScheduler.unschedule(highestPriorityJob);
 		assertFalse(aScheduler.getJobs().contains(highestPriorityJob));

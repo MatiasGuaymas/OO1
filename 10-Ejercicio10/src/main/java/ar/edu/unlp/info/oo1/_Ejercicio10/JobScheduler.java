@@ -3,13 +3,12 @@ package ar.edu.unlp.info.oo1._Ejercicio10;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class JobScheduler {
+public class JobScheduler {
 	protected List<JobDescription> jobs;
-	protected String strategy;
+	protected Strategy strategy;
 
 	public JobScheduler() {
 		this.jobs = new ArrayList<>();
-		this.strategy = "FIFO";
 	}
 
 	public void schedule(JobDescription job) {
@@ -22,18 +21,22 @@ public abstract class JobScheduler {
 		}
 	}
 
-	public String getStrategy() {
+	public Strategy getStrategy() {
 		return this.strategy;
 	}
 
 	public List<JobDescription> getJobs() {
-		return jobs;
+		return this.jobs;
 	}
 
-	public void setStrategy(String aStrategy) {
+	public void setStrategy(Strategy aStrategy) {
 		this.strategy = aStrategy;
 	}
 
-	public abstract JobDescription next();
+	public JobDescription next() {
+		JobDescription nextJob = this.strategy.next(this.jobs);
+		this.unschedule(nextJob);
+		return nextJob;
+	}
 
 }

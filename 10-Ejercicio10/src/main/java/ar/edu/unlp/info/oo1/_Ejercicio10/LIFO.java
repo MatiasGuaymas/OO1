@@ -1,11 +1,13 @@
 package ar.edu.unlp.info.oo1._Ejercicio10;
 
-public class JobSchedulerLIFO extends JobScheduler {
-	public JobDescription next() {
+import java.util.List;
+
+public class LIFO implements Strategy {
+
+	public JobDescription next(List<JobDescription> jobs) {
 		JobDescription nextJob = null;
-		if (this.jobs != null) {
+		if (jobs != null) {
 			nextJob = jobs.get(jobs.size() - 1);
-			this.unschedule(nextJob);
 			return nextJob;
 		}
 		return null;
