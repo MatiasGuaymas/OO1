@@ -37,4 +37,14 @@ public class Email {
 	public boolean cumple(String texto) {
 		return this.titulo.equals(texto) || this.cuerpo.equals(texto);
 	}
+
+	public String categoria() {
+		int tamanio = this.tamanioEmail();
+		if (tamanio <= 300) {
+			return "Pequeño";
+		} else if (tamanio <= 500) {
+			return "Mediano";
+		} else
+			return "Grande";
+	}
 }

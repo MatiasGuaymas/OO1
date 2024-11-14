@@ -37,7 +37,8 @@ public class Pedido {
 	}
 
 	public double calcularCosto(String dirVendedor) {
-		return this.pago.montoTotal(this.prod) + this.envio.costoDeEnvio(dirVendedor, this.persona.getDireccion());
+		return this.pago.montoTotal(this.prod.getPrecio())
+				+ this.envio.costoDeEnvio(dirVendedor, this.persona.getDireccion());
 	}
 
 }

@@ -2,9 +2,9 @@ package ar.edu.unlp.info.oo1._Ejercicio23;
 
 public abstract class FormaDePago {
 
-	public double montoTotal(Producto p) {
-		return p.getPrecio() + this.recargo(p);
+	public double montoTotal(double precio) {
+		return precio + this.recargo(precio);
 	}
 
-	protected abstract double recargo(Producto p);
+	protected abstract double recargo(double precio);
 }

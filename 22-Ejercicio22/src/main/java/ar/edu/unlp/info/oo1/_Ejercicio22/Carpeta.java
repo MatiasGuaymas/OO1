@@ -47,7 +47,9 @@ public class Carpeta {
 		return this.emails.size();
 	}
 
-	public void sumarCategoria(BagImpl<String> bolsa) {
-
+	public BagImpl<String> sumarCategoria() {
+		BagImpl<String> bag = new BagImpl<String>();
+		this.emails.stream().forEach(e -> bag.add(e.categoria()));
+		return bag;
 	}
 }

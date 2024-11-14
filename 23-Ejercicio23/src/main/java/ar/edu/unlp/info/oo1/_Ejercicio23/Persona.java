@@ -18,14 +18,8 @@ public class Persona {
 		this.pedidos = new ArrayList<Pedido>();
 	}
 
-	public Pedido crearPedido(FormaDePago pago, TipoDeEnvio envio, Producto p, int cantSolicitada) {
-		if (p.hayStock(cantSolicitada)) {
-			p.decrementarStock(cantSolicitada);
-			Pedido pedido = new Pedido(p, this, pago, envio, cantSolicitada);
-			this.pedidos.add(pedido);
-			return pedido;
-		}
-		return null;
+	public void agregarPedido(Pedido p) {
+		this.pedidos.add(p);
 	}
 
 	public Producto publicarProducto(String nombre, String categoria, double precio, int stock) {

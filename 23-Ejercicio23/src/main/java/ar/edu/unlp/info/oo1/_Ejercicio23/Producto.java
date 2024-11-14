@@ -14,11 +14,11 @@ public class Producto {
 		this.cantDisponibles = cantDisponibles;
 	}
 
-	public boolean hayStock(int cant) {
+	private boolean hayStock(int cant) {
 		return this.cantDisponibles >= cant;
 	}
 
-	public void decrementarStock(int cant) {
+	private void decrementarStock(int cant) {
 		this.cantDisponibles -= cant;
 	}
 
@@ -36,6 +36,16 @@ public class Producto {
 
 	public int getCantDisponibles() {
 		return cantDisponibles;
+	}
+
+	public Pedido crearPedido(FormaDePago pago, TipoDeEnvio envio, Persona cliente, int cantSolicitada) {
+		if (this.hayStock(cantSolicitada)) {
+			this.decrementarStock(cantSolicitada);
+			Pedido pedido = new Pedido(this, cliente, pago, envio, cantSolicitada);
+			cliente.agregarPedido(pedido);
+			return pedido;
+		}
+		return null;
 	}
 
 }
