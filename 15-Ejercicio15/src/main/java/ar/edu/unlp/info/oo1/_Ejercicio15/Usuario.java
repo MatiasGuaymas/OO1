@@ -19,12 +19,15 @@ public class Usuario {
 	}
 
 	public Factura crearFactura(CuadroTarifario cuadro) {
-		Consumo ult = this.consumos.get(this.consumos.size() - 1);
-		double monto = ult.precio(cuadro.getPrecio());
-		double bonificacion = 0;
-		if (ult.hayBonificacion()) {
-			bonificacion = monto * 0.10;
+		if (this.consumos.size() > 0) {
+			Consumo ult = this.consumos.get(this.consumos.size() - 1);
+			double monto = ult.precio(cuadro.getPrecio());
+			double bonificacion = 0;
+			if (ult.hayBonificacion()) {
+				bonificacion = monto * 0.10;
+			}
+			return new Factura(this, bonificacion, monto - bonificacion);
 		}
-		return new Factura(this, bonificacion, monto - bonificacion);
+		return null;
 	}
 }

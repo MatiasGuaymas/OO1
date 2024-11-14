@@ -14,4 +14,8 @@ public class Factura {
 		this.bonificacion = bonif;
 		this.montoTotal = monto;
 	}
+
+	public double montoTotal() {
+		return this.montoTotal;
+	}
 }
