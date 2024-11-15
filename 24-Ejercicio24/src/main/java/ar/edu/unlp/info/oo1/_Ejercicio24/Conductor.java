@@ -11,9 +11,9 @@ public class Conductor extends Usuario {
 	protected double recargo() {
 		double saldo = this.getSaldo();
 		if (vehiculo.getAntiguedad() < 5) {
-			saldo *= 1.01;
+			saldo *= 0.01;
 		} else {
-			saldo *= 1.10;
+			saldo *= 0.10;
 		}
 		return saldo;
 	}

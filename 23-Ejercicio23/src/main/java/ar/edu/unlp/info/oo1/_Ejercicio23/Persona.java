@@ -30,7 +30,7 @@ public class Persona {
 
 	public BagImpl<String> cantCategoria() {
 		BagImpl<String> bag = new BagImpl<String>();
-		this.pedidos.stream().forEach(p -> bag.add(p.getProd().getCategoria()));
+		this.pedidos.stream().forEach(p -> bag.add(p.getCategoria()));
 		return bag;
 	}
 
