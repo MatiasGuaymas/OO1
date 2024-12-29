@@ -13,17 +13,24 @@
 * [**Práctica 6**](https://github.com/MatiasGuaymas/ISO/tree/main/Resoluciones/Practica-6)
 
 > [**Ejercicio 1: Wallpost**](https://github.com/MatiasGuaymas/OO1/tree/main/01-Ejercicio1/ejercicio1/src)
+>
 > [**Ejercicio 1: Wallpost**](https://github.com/MatiasGuaymas/OO1/tree/main/02-Ejercicio2/ejercicio2/src)
+>
 > [**Ejercicio 1: Wallpost**](https://github.com/MatiasGuaymas/OO1/tree/main/03-Ejercicio3/src)
+>
 > [**Ejercicio 1: Wallpost**](https://github.com/MatiasGuaymas/OO1/tree/main/04-Ejercicio4/src)
+>
 > [**Ejercicio 1: Wallpost**](https://github.com/MatiasGuaymas/OO1/tree/main/05-Ejercicio5/src)
+>
 > [**Ejercicio 1: Wallpost**](https://github.com/MatiasGuaymas/OO1/tree/main/06-Ejercicio6/src)
+>
 > [**Ejercicio 1: Wallpost**](https://github.com/MatiasGuaymas/OO1/tree/main/07-Ejercicio7/src)
+>
 > [**Ejercicio 1: Wallpost**](https://github.com/MatiasGuaymas/OO1/tree/main/08-Ejercicio8/src)
+>
 > [**Ejercicio 1: Wallpost**](https://github.com/MatiasGuaymas/OO1/tree/main/09-Ejercicio9/src)
+>
 > [**Ejercicio 1: Wallpost**](https://github.com/MatiasGuaymas/OO1/tree/main/10-Ejercicio10/src)
-
-## UML 
 
 ## Explicaciones Semanales
 * [**Explicación Semana 1**](https://github.com/MatiasGuaymas/ISO/blob/main/Explicaciones/Explicacion%20de%20P1.pdf)
